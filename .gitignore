@@ -1,0 +1,21 @@
+# This repository is documentation-only. Keep all game source and private files out.
+Assets/
+Packages/
+ProjectSettings/
+Library/
+Logs/
+Temp/
+UserSettings/
+Build/
+Builds/
+*.unitypackage
+*.keystore
+*.p12
+*.mobileprovision
+*.jks
+*.pem
+*.key
+*.env
+*.secret
+google-services.json
+GoogleService-Info.plist
