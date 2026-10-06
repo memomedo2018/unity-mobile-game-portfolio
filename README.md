@@ -2,7 +2,29 @@
 
 I build focused 3D mobile games and gameplay prototypes in Unity and C#. My work covers the full playable loop: controls, camera, physics, AI, UI, optimization, SDK integration, testing, and release support for iOS and Android.
 
-> This is a portfolio showcase. The commercial project source code and production assets remain private. The repository intentionally contains no Unity project files, credentials, signing material, or distributable source packages.
+> Commercial game source and production assets remain private. This repository contains project presentation material and small, standalone C# examples created specifically for this portfolio with AI assistance. The examples are not extracted from the shipped games and do not represent historical commits to those projects.
+
+## Review the code
+
+[![C# sample checks](https://github.com/memomedo2018/unity-mobile-game-portfolio/actions/workflows/samples.yml/badge.svg)](https://github.com/memomedo2018/unity-mobile-game-portfolio/actions/workflows/samples.yml)
+
+Three focused examples demonstrate testable gameplay logic and clear integration boundaries:
+
+| Example | What to inspect | Code |
+| --- | --- | --- |
+| Mobile joystick | Single-pointer ownership, radial dead zone, diagonal clamping, cancellation on focus loss | [MobileStick.cs](samples/Core/MobileStick.cs) · [Unity UI adapter](samples/Unity/TouchStickView.cs) |
+| Enemy state machine | Idle/chase/attack transitions, separate enter/exit ranges, cooldowns without burst damage | [EnemyBrain.cs](samples/Core/EnemyBrain.cs) |
+| Progress saving | Versioned format, validation, corruption detection, atomic replacement, last-good backup | [ProgressSave.cs](samples/Core/ProgressSave.cs) |
+
+**Start here:** [integration guide and design notes](samples/README.md) · [23 executable behavior tests](tests/Program.cs) · [CI results](https://github.com/memomedo2018/unity-mobile-game-portfolio/actions/workflows/samples.yml)
+
+Run the core tests with the .NET 8 SDK; no Unity editor or third-party test packages are required:
+
+```sh
+dotnet run --project tests/PortfolioSamples.Tests.csproj --configuration Release
+```
+
+CI runs the core tests on Windows and Linux. The Unity UI adapter is outside that .NET project and has its own integration notes; CI is not a device-playtest claim.
 
 ## Featured work
 
@@ -10,7 +32,7 @@ I build focused 3D mobile games and gameplay prototypes in Unity and C#. My work
 
 ![ROADFORGE gameplay](media/roadforge.png)
 
-A mobile driving game built around readable roads, responsive vehicle handling, short sessions, and production-ready release workflows.
+A mobile tank-combat game with vehicle controls, enemy encounters, progression, and mobile release workflows.
 
 - Unity / C# 3D gameplay
 - Mobile input and camera tuning
@@ -31,7 +53,9 @@ An arcade motorcycle prototype exploring touch steering, traffic behavior, drift
 
 ### TNT Crash — physics prototype
 
-![TNT Crash gameplay](media/tnt-crash.png)
+![TNT Crash visual concept](media/tnt-crash.png)
+
+*AI-assisted concept visualization for an in-progress project; not a gameplay recording.*
 
 A compact destruction puzzle prototype centered on aiming, explosive chain reactions, and readable physics feedback.
 
@@ -42,7 +66,9 @@ A compact destruction puzzle prototype centered on aiming, explosive chain react
 
 ### Furniture Escape — room puzzle prototype
 
-![Furniture Escape gameplay](media/furniture-escape.png)
+![Furniture Escape visual concept](media/furniture-escape.png)
+
+*AI-assisted concept visualization for an in-progress project; not a gameplay recording.*
 
 A top-down room puzzle prototype focused on movement planning, environmental interaction, and clear visual guidance.
 
@@ -53,7 +79,9 @@ A top-down room puzzle prototype focused on movement planning, environmental int
 
 ### Number Rush — hyper-casual prototype
 
-![Number Rush gameplay](media/number-rush.png)
+![Number Rush visual concept](media/number-rush.png)
+
+*AI-assisted concept visualization for an in-progress project; not a gameplay recording.*
 
 A quick-session runner prototype that combines number gates, risk/reward choices, collectibles, and simple progression feedback.
 
@@ -71,7 +99,7 @@ A quick-session runner prototype that combines number gates, risk/reward choices
 
 ## Source-code policy
 
-The games shown here are original portfolio work. Full source code and production assets are not published because they contain proprietary work and release-specific material. For serious client discussions, I can walk through architecture, selected sanitized snippets, and implementation decisions on a call without distributing the complete projects.
+Full game source and production assets are not published. The standalone examples above were written separately for review and contain no game assets, private project code, service credentials, or signing material. Everything in this public repository can be viewed and downloaded; private project directories have not been uploaded. I can discuss the examples and project architecture with prospective clients through Upwork.
 
 ## Contact
 

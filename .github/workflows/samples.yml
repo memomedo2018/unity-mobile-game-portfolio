@@ -1,0 +1,22 @@
+name: C# sample checks
+on:
+  push:
+    paths: ['samples/**', 'tests/**', '.github/workflows/samples.yml']
+  pull_request:
+    paths: ['samples/**', 'tests/**', '.github/workflows/samples.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  core-behavior:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Run executable behavior tests
+        run: dotnet run --project tests/PortfolioSamples.Tests.csproj --configuration Release

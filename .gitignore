@@ -1,4 +1,13 @@
-# This repository is documentation-only. Keep all game source and private files out.
+# Only standalone portfolio examples belong here; commercial Unity projects stay private.
+**/bin/
+**/obj/
+.DS_Store
+*.exe
+*.dll
+*.pdb
+*.save
+*.bak
+*.tmp
 Assets/
 Packages/
 ProjectSettings/
